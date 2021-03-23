@@ -1,60 +1,30 @@
 <template>
-    <v-app>
-        <!--        <v-app-bar
-                    app
-                    color="primary"
-                    dark
-                >
-                    <div class="d-flex align-center">
-                        <v-img
-                            alt="Vuetify Logo"
-                            class="shrink mr-2"
-                            contain
-                            src="https://cdn.vuetifyjs.com/images/logos/vuetify-logo-dark.png"
-                            transition="scale-transition"
-                            width="40"
-                        />
-
-                        <v-img
-                            alt="Vuetify Name"
-                            class="shrink mt-1 hidden-sm-and-down"
-                            contain
-                            min-width="100"
-                            src="https://cdn.vuetifyjs.com/images/logos/vuetify-name-dark.png"
-                            width="100"
-                        />
-                    </div>
-
-                    <v-spacer></v-spacer>
-
-                    <v-btn
-                        href="https://github.com/vuetifyjs/vuetify/releases/latest"
-                        target="_blank"
-                        text
-                    >
-                        <span class="mr-2">Latest Release</span>
-                        <v-icon>mdi-open-in-new</v-icon>
-                    </v-btn>
-                </v-app-bar>-->
-
+    <v-app align="center">
+        <main-header></main-header>
         <v-main>
-            <h1>test</h1>
+            <some-info :data="myNum"></some-info>
         </v-main>
+        <main-footer></main-footer>
     </v-app>
 </template>
 
 <script>
-// import HelloWorld from './components/HelloWorld';
+import MainHeader from "@/components/MainHeader";
+import MainFooter from "@/components/MainFooter";
+import SomeInfo from "@/components/SomeInfo";
 
 export default {
     name: 'App',
-
     components: {
-        // HelloWorld,
+        MainHeader,
+        MainFooter,
+        SomeInfo
     },
-
-    data: () => ({
-        //
-    }),
+    
+    data() {
+        return {
+            myNum: 21,
+        }
+    },
 };
 </script>
